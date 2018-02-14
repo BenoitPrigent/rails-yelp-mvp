@@ -1,0 +1,22 @@
+<h1> Add a new review </h1>
+
+
+<div class="container">
+  <%= simple_form_for([@restaurant, @review]) do |r|%>
+
+  <div class="row">
+    <%= r.input :rating, collection: [0, 1, 2, 3, 4, 5], as: :select %>
+  </div>
+
+  <div class="row">
+    <%= r.label :content %>
+    <%= r.text_field :content %>
+  </div>
+
+  <div class="row">
+    <%= r.submit "Add a Restaurant", class: "btn btn-primary" %>
+  </div>
+
+  <% end %>
+
+</div>
