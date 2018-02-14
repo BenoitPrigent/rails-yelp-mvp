@@ -44,3 +44,29 @@ restaurants_attributes = [
 ]
 Restaurant.create!(restaurants_attributes)
 puts 'Finished!'
+
+puts 'Cleaning database...'
+Review.destroy_all
+
+puts 'Creating reviews...'
+reviews_attributes = [
+  {
+    content:         'Very Good',
+    rating:         4,
+    restaurant_id:   28,
+  },
+ {
+    content:         'Very Strong',
+    rating:         3,
+    restaurant_id:   29,
+  },
+ {
+    content:         'Hello',
+    rating:         2,
+    restaurant_id:   30,
+  },
+
+]
+Review.create!(reviews_attributes)
+puts 'Finished!'
+
