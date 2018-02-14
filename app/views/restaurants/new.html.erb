@@ -1,22 +1,19 @@
-<h1> Add a new restaurant </h1>
-
-
 <div class="container">
+
+  <h1> Add a new restaurant </h1>
+
   <%= simple_form_for(@restaurant) do |r|%>
 
   <div class="row">
-    <%= r.label :name %>
-    <%= r.text_field :name %>
+    <%= r.input :name, class: "form-control" %>
   </div>
 
   <div class="row">
-    <%= r.label :address %>
-    <%= r.text_field :address %>
+    <%= r.input :address, class: "form-control" %>
   </div>
 
   <div class="row">
-    <%= r.label :phone_number %>
-    <%= r.text_field :phone_number %>
+    <%= r.input :phone_number, class: "form-control" %>
   </div>
 
   <div class="row">

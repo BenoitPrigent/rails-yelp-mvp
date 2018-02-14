@@ -1,21 +1,28 @@
 <div class="container">
 
   <div class="restaurant-card">
-    <h3> <%=  @restaurant.name %></h3>
-    <p> Address: <em> <%= @restaurant.address  %></em>  </p>
-    <p> Phone Number : <%= @restaurant.phone_number %></p>
-    <p> <%=@restaurant.category.capitalize  %> </p>
-  </div>
 
-  <h2> Reviews </h2>
-
-  <% @reviews.each do |review| %>
-    <div class ="restaurant-card">
-      <h2> <%= review.rating %> </h2>
-      <p><%= review.content %></p>
+    <div>
+      <h3> <%=  @restaurant.name %></h3>
+      <p> Address: <em> <%= @restaurant.address  %></em>  </p>
+      <p> Phone Number : <%= @restaurant.phone_number %></p>
+      <p> <%=@restaurant.category.capitalize  %> </p>
     </div>
-  <% end %>
 
-  <%= link_to "Add a new review to this restaurant", new_restaurant_review_path(@restaurant.id) %>
+    <%= link_to "Add a new review", new_restaurant_review_path(@restaurant.id), class: "btn btn-success text-center" %>
+    </div>
 
+  <h2 class="text-center"> Reviews </h2>
+
+
+  <div class="row">
+    <% @reviews.each do |review| %>
+      <div class="col-xs-4">
+        <div class ="review-card text-center ">
+          <h2> <%= review.rating %> </h2>
+          <p><%= review.content %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
