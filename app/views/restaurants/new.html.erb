@@ -1,0 +1,33 @@
+<h1> Add a new restaurant </h1>
+
+
+<div class="container">
+  <%= simple_form_for(@restaurant) do |r|%>
+
+  <div class="row">
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+  </div>
+
+  <div class="row">
+    <%= r.label :address %>
+    <%= r.text_field :address %>
+  </div>
+
+  <div class="row">
+    <%= r.label :phone_number %>
+    <%= r.text_field :phone_number %>
+  </div>
+
+  <div class="row">
+    <%= r.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], as: :select %>
+  </div>
+
+   <div class="row">
+    <%= r.submit "Add a Restaurant", class: "btn btn-primary" %>
+  </div>
+
+  <% end %>
+
+</div>
+
